@@ -1,15 +1,6 @@
 import axios from 'axios'
 
 export default {
-  async fetchMain ({ commit }) {
-    try {
-      const { data } = await axios.get(`http://localhost:4210/`)
-      const message = data.message
-      commit('gotMain', message)
-    } catch (error) {
-      console.warn(error)
-    }
-  },
   async fetchGames ({ commit }) {
     try {
       const { data } = await axios.get('http://localhost:4210/game/')
@@ -25,7 +16,8 @@ export default {
         games: [],
         result: [],
         date: Date.now(),
-        hits: 0
+        hits: 0,
+        checked: false
       }
       const { data } = await axios.post('http://localhost:4210/game/', game)
       if (data.error) throw new Error('Failed to Create New Game!', data.error)

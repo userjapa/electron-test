@@ -9,13 +9,14 @@
 </template>
 
 <script>
-import { props, methods, mounted } from './jogo'
+import { props, methods, mounted, watch } from './jogo'
 
 export default {
   name: 'jogo',
   props,
   methods,
-  mounted
+  mounted,
+  watch
 }
 </script>
 

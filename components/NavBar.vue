@@ -3,12 +3,12 @@
     <div class="container" ref="menu">
       <nuxt-link to="/" v-on:click.native="select" class="item">
         <div>
-          Main
+          Jogos
         </div>
       </nuxt-link>
-      <nuxt-link to="/about" v-on:click.native="select" class="item">
+      <nuxt-link to="/estatistica" v-on:click.native="select" class="item">
         <div>
-          About page
+          Estatística
         </div>
       </nuxt-link>
     </div>

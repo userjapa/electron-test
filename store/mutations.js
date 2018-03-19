@@ -1,9 +1,6 @@
 import { formatDate } from './filters'
 
 export default {
-  gotMain (state, message) {
-    state.message = message
-  },
   gotGames (state, games) {
     state.games = games
     state.games.map(formatDate)

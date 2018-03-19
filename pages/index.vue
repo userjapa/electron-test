@@ -27,7 +27,7 @@
                 <tr v-for="game in games">
                   <td @click="goTo(game['_id'])">{{ game.games.length }}</td>
                   <td @click="goTo(game['_id'])">{{ game.date }}</td>
-                  <td @click="goTo(game['_id'])">{{ (!game.result || game.result.length === 0)?'Sem Resultado':`${game.hits} acertos` }}</td>
+                  <td @click="goTo(game['_id'])">{{ !game.checked?'Não Conferido':`${game.hits} acertos` }}</td>
                   <td class="icon-trash"><button @click="deleteGame(game['_id'])"><img src="~/assets/images/trash-can.png" alt="Deletar Sorteio"></button></td>
                 </tr>
                 <!-- <tr v-if="!hasData">
