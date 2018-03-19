@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <div class="form">
+      <div class="option" v-for="x in 25" @click="select(x, $event.target)" :ref="x">
+        {{x}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { props, methods, mounted } from './jogo'
+
+export default {
+  name: 'jogo',
+  props,
+  methods,
+  mounted
+}
+</script>
+
+<style>
+@import url('./jogo/style.css');
+</style>

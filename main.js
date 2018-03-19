@@ -7,6 +7,8 @@ let win = null // Current window
 const http = require('http')
 const { Nuxt, Builder } = require('nuxt')
 
+const apis = require('./src/app')
+
 // Import and Set Nuxt.js options
 let config = require('./nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
@@ -16,6 +18,7 @@ config.rootDir = __dirname // for electron-packager
 const nuxt = new Nuxt(config)
 const builder = new Builder(nuxt)
 const server = http.createServer(nuxt.render)
+const apiserver = http.createServer(apis)
 
 // Build only in dev mode
 if (config.dev) {
@@ -27,9 +30,13 @@ if (config.dev) {
 }
 
 // Listen the server
-server.listen()
+server.listen(4200)
+apiserver.listen(4210)
+
 const _NUXT_URL_ = `http://localhost:${server.address().port}`
+const _API_URL_ = `http://localhost:${apiserver.address().port}`
 console.log(`Nuxt working on ${_NUXT_URL_}`)
+console.log(`API working on ${_API_URL_}`)
 
 /*
 ** Electron app

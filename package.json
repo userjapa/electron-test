@@ -13,8 +13,14 @@
     "pack": "npm run build && electron-packager ./ --overwrite"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "cross-env": "^3.1.4",
     "electron": "latest",
-    "nuxt": "latest"
+    "express": "^4.16.3",
+    "nedb": "^1.8.0",
+    "nuxt": "latest",
+    "vuex": "^3.0.1"
   }
 }
