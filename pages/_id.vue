@@ -19,14 +19,14 @@
             </div>
           </div>
           <div class="area">
-            Sorteio do dia {{ formatDate({ date: game.date }).date }}
+            Sorteio de {{ formatDateWeek(game.date) }}
           </div>
           <div class="area no-border" v-if="game && game.result.length > 0">
             <div class="info">
               Resultado: <b v-for="(n, index) in sortNumbers(game.result)">{{ `${n}${index !== (game.result.length - 1)?', ':'.'}` }}</b>
             </div>
-            <div class="info space">
-              Nº Acertos: <b>11: {{corrects[11]}} | 12: {{corrects[12]}} | 13: {{corrects[13]}} | 14: {{corrects[14]}} | 15: {{corrects[15]}}</b>.
+            <div class="info space" v-if="game.checked">
+              Nº Acertos: <b>11: {{corrects[11]}} | 12: {{corrects[12]}} | 13: {{corrects[13]}} | 14: {{corrects[14]}} | 15: {{corrects[15]}}.</b>
             </div>
             <div class="info dad">
               <div class="button small">
@@ -38,13 +38,11 @@
             </div>
           </div>
           <div class="area" v-if="!game || game.result.length === 0">
-            <div class="result">
-              <div class="info">
-                <b>Nenhum Resultado Registrado</b>
-              </div>
-              <div class="button">
-                <button @click="addResult()">Adicionar Resultado</button>
-              </div>
+            <div class="info">
+              <b>Nenhum Resultado Registrado</b>
+            </div>
+            <div class="info">
+              <button @click="addResult()">Adicionar Resultado</button>
             </div>
           </div>
           <div class="area">
@@ -62,7 +60,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(g, index) in game.games">
+                    <tr v-for="(g, index) in game.games" :style="{'background-color': g.score >= 11?'#d6d6d6':''}">
                       <td @click="openGame(g.numbers)">{{game.checked?`${g.score} Acertos`:'Não Verificado'}}</td>
                       <td @click="openGame(g.numbers)">
                         <b v-for="(num, index) in sortNumbers(g.numbers)">
@@ -96,8 +94,6 @@
 <script>
 import FormGame from '@/components/FormGame'
 import { gameBus } from '@/components/form-game'
-
-import { formatDate } from '@/store/filters'
 
 export default {
   computed: {
@@ -162,7 +158,6 @@ export default {
       const sorted = copy.sort((before, current) => before - current)
       return sorted
     },
-    formatDate,
     verify: async function (game) {
       if (game.games.length === 0) {
         alert('Deve ser Cadastrado algum Jogo!')
@@ -180,8 +175,22 @@ export default {
       game.hits = countHits
       game.checked = true
       await this.$store.dispatch('change', game)
-      // await this.$store.dispatch('getById', game['_id'])
+      this.getScores()
       alert(`Jogos verificados! ${game.hits} Jogos Premiados!`)
+    },
+    formatDateWeek: function (date) {
+      const day = new Date(date)
+      const dayOfWeek = day.getUTCDay()
+      if (dayOfWeek === 0 || dayOfWeek === 1 || dayOfWeek === 6) return 'Segunda'
+      else if (dayOfWeek === 2 || dayOfWeek === 3) return 'Quarta'
+      else if (dayOfWeek === 4 || dayOfWeek === 5) return 'Sexta'
+      else return ''
+    },
+    getScores: function () {
+      const filtered = this.game.games.filter(x => x.score >= 11)
+      for (let x of filtered) {
+        this.corrects[x.score]++
+      }
     }
   },
   mounted () {
@@ -191,11 +200,7 @@ export default {
       if (this.$data.result) this.$data.result = false
     })
 
-    const filtered = this.game.games.filter(x => x.score >= 11)
-    for (let x of filtered) {
-      this.corrects[x.score]++
-    }
-    console.log(this.corrects)
+    this.getScores()
   }
 }
 </script>
@@ -232,6 +237,42 @@ export default {
   min-width: 125px;
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.button button:hover {
+  background-color: white;
+  border-color: black;
+  cursor: pointer;
+}
+
+.button button:active {
+  color: white;
+  background-color: #d6d6d6;
+  border: 1px solid black;
+}
+
+.info * {
+  margin: 5px;
+}
+
+.info button {
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.info button:hover {
+  background-color: white;
+  border-color: black;
+}
+
+.info button:active {
+  color: white;
+  background-color: #d6d6d6;
+  border: 1px solid black;
 }
 
 .small {
@@ -248,25 +289,6 @@ export default {
   justify-content: center;
 }
 
-.result {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0 50px;
-}
-
-.result .info {
-  max-width: 150px;
-  align-self: flex-start;
-  flex-grow: 1;
-}
-
-.result > .info {
-  font-size: 15px;
-  text-align: center;
-  padding-top: 10px;
-}
-
 .area table {
   width: 100%;
 }
@@ -278,6 +300,7 @@ export default {
   display: flex;
   flex-direction: row;
   position: relative;
+  padding-top: 5px;
 }
 
 .area table tr th, td {
@@ -302,6 +325,20 @@ export default {
   border: 0;
   padding: 5px;
   margin: 0 7px;
+  border: 1px solid #d6d6d6;
+  outline: none;
+}
+
+.action button:hover {
+  background-color: white;
+  border-color: black;
+  cursor: pointer;
+}
+
+.action button:active {
+  color: white;
+  background-color: #d6d6d6;
+  border: 1px solid black;
 }
 
 .right {

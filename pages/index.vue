@@ -18,7 +18,7 @@
               <thead>
                 <tr>
                   <th>Nº de Jogos</th>
-                  <th>Data</th>
+                  <th>Data de Cadastro</th>
                   <th>Resultado</th>
                   <th>Excluir</th>
                 </tr>
@@ -114,6 +114,7 @@ table tr {
   margin-bottom: 15px;
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid #d6d6d6;
 }
 
 table tr td {
@@ -123,7 +124,6 @@ table tr td {
 table tr th, td {
   flex-grow: 1;
   max-width: 25%;
-  border-bottom: 1px solid #d6d6d6;
 }
 
 .exception {
@@ -141,10 +141,29 @@ table tr th, td {
 .button-add button {
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.button-add button:hover {
+  background-color: white;
+  border-color: black;
+  cursor: pointer;
+}
+
+.button-add button:active {
+  color: white;
+  background-color: #d6d6d6;
+  border: 1px solid black;
+}
+
+.icon-trash {
+  padding: 0;
 }
 
 .icon-trash button {
   background-color: #fff;
+  outline: none;
 }
 
 .icon-trash button img {
