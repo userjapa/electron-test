@@ -1,26 +1,61 @@
 {
-  "name": "electronuxt",
+  "name": "lotofacil-verify",
   "version": "1.1.1",
-  "description": "Create an Electron app that serves a Nuxt.js app",
+  "description": "Verify Lotofacil Games",
   "main": "main.js",
-  "repository": "git@github.com:detrohutt/electronuxt.git",
-  "author": "Alexander Roberts <detrohutt@gmail.com>",
+  "repository": "git@github.com:usuarioJapa/electro-test.git",
+  "author": "Willian Hiroshi Simabukuro <willian.hsimabukuro@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development electron .",
+    "postinstall": "install-app-deps",
     "build": "nuxt build",
-    "start": "electron .",
-    "pack": "npm run build && electron-packager ./ --overwrite"
+    "start": "npm run build && electron .",
+    "pack": "npm run build && electron-packager ./ --overwrite",
+    "dist": "npm run postinstall && npm run build && build"
+  },
+  "build": {
+    "appId": "com.lotofacil.electron",
+    "asar": false,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babili-webpack-plugin": "^0.1.2",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "cross-env": "^3.1.4",
-    "electron": "latest",
     "express": "^4.16.3",
+    "fs": "^0.0.1-security",
     "nedb": "^1.8.0",
+    "net": "^1.0.2",
     "nuxt": "latest",
     "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "^20.6.2"
   }
 }

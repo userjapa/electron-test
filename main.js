@@ -7,7 +7,7 @@ let win = null // Current window
 const http = require('http')
 const { Nuxt, Builder } = require('nuxt')
 
-const apis = require('./src/app')
+const apis = require('./application')
 
 // Import and Set Nuxt.js options
 let config = require('./nuxt.config.js')
@@ -70,6 +70,7 @@ const newWin = () => {
     protocol: 'file:',
     slashes: true
   }))
+
   win.on('closed', () => win = null)
   pollServer()
 }

@@ -7,7 +7,7 @@ export default {
   },
   addGame: async function (game) {
     if (this.$data.numbers.length === 15) {
-      game.games.push({ numbers: this.$data.numbers, score: 0 })
+      game.games.push({ numbers: this.$data.numbers, score: 0, id: game.games.length + 1 })
       await this.$store.dispatch('change', game)
       gameBus.$emit('close')
       this.$data.numbers = []

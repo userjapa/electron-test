@@ -14,7 +14,7 @@
                 </nuxt-link>
               </div>
               <div class="button">
-                <button type="button" name="add_game" @click="openModal()">Adicionar Jogo</button>
+                <button type="button" name="add_game" @click="openModal()" :disabled="game.checked">Adicionar Jogo</button>
               </div>
             </div>
           </div>
@@ -54,6 +54,7 @@
                 <table>
                   <thead>
                     <tr>
+                      <th class="id">ID</th>
                       <th>Acertos</th>
                       <th>Números</th>
                       <th>Editar/Excluir</th>
@@ -61,6 +62,7 @@
                   </thead>
                   <tbody>
                     <tr v-for="(g, index) in game.games" :style="{'background-color': g.score >= 11?'#d6d6d6':''}">
+                      <td class="id">{{g.id}}</td>
                       <td @click="openGame(g.numbers)">{{game.checked?`${g.score} Acertos`:'Não Verificado'}}</td>
                       <td @click="openGame(g.numbers)">
                         <b v-for="(num, index) in sortNumbers(g.numbers)">
@@ -69,10 +71,10 @@
                       </td>
                       <td>
                         <div class="button action">
-                          <button class="right" @click="editGame(index, g.numbers)">Editar</button>
+                          <button class="right" @click="editGame(index, g.numbers)" :disabled="game.checked">Editar</button>
                         </div>
                         <div class="button action">
-                          <button class="left" @click="remove(index)">Remover</button>
+                          <button class="left" @click="remove(index)" :disabled="game.checked">Remover</button>
                         </div>
                       </td>
                     </tr>
@@ -98,12 +100,6 @@ import { gameBus } from '@/components/form-game'
 export default {
   computed: {
     game () {
-      const game = this.$store.state.game
-      if (game.checked) {
-        const sorted = game.games.sort((before, current) => current.score - before.score)
-
-        this.$store.state.game.games = sorted
-      }
       return this.$store.state.game
     }
   },
@@ -113,13 +109,7 @@ export default {
       showModal: false,
       edit: null,
       result: false,
-      corrects: {
-        11: 0,
-        12: 0,
-        13: 0,
-        14: 0,
-        15: 0,
-      }
+      corrects: {}
     }
   },
   components: {
@@ -187,10 +177,18 @@ export default {
       else return ''
     },
     getScores: function () {
+      let copy = {
+        11: 0,
+        12: 0,
+        13: 0,
+        14: 0,
+        15: 0,
+      }
       const filtered = this.game.games.filter(x => x.score >= 11)
       for (let x of filtered) {
-        this.corrects[x.score]++
+        copy[x.score]++
       }
+      this.corrects = copy
     }
   },
   mounted () {
@@ -301,15 +299,21 @@ export default {
   flex-direction: row;
   position: relative;
   padding-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .area table tr th, td {
-  width: 33%;
+  width: 30%;
   height: 100%;
   flex-grow: 1;
   max-width: 50%;
   margin: auto;
   padding-bottom: 10px
+}
+
+.id {
+  width: 10% !important;
 }
 
 .action {
