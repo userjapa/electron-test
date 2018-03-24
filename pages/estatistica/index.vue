@@ -74,10 +74,10 @@ export default {
   },
   computed: {
     rounds () {
-      return this.$store.state.games.filter(x => x.checked)
+      return this.$store.state.g.games.filter(x => x.checked)
     },
     numbers () {
-      return this.$store.state.games.filter(x => x.games.length > 0)
+      return this.$store.state.g.games.filter(x => x.games.length > 0)
     }
   },
   layout: 'sample',
@@ -144,7 +144,7 @@ export default {
 }
 
 .statistic {
-  max-width: 45%;
+  max-width: 50%;
   padding: 5px 0;
   align-self: flex-start;
   text-align: start;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="index-page">
     <div class="view">
       <div class="section no-border">
         <h2>Sorteios</h2>
@@ -7,9 +7,16 @@
       <div class="section">
         <div class="view">
           <div class="section">
-            <div class="view">
+            <div class="view row">
               <div class="button-add">
                 <button type="button" name="add_game" @click="createGame()">Adicionar Sorteio</button>
+              </div>
+              <div class="button-add">
+                <button type="button" name="import_data" @click="importDatabase()">Importar Dados Sorteio</button>
+                <input type="file" ref="upload_file" style="display: none;" @change="changed">
+              </div>
+              <div class="button-add">
+                <button type="button" name="export_data" @click="exportDatabase()">Exportar Dados</button>
               </div>
             </div>
           </div>
@@ -52,7 +59,10 @@ export default {
   },
   computed: {
     games () {
-      return this.$store.state.games
+      return this.$store.state.g.games
+    },
+    file () {
+      return this.$store.state.d.file
     }
   },
   layout: 'sample',
@@ -73,6 +83,30 @@ export default {
     async goTo (id) {
       await this.$store.dispatch('getById', id)
       $nuxt.$router.push(`/${id}`)
+    },
+    importDatabase () {
+      const uploader = this.$refs['upload_file']
+      uploader.click()
+    },
+    async exportDatabase () {
+      const index = this.$refs['index-page']
+      await this.$store.dispatch('exportDatabase')
+      const url = window.URL.createObjectURL(new Blob([this.file]))
+      let link = document.createElement('a')
+      link.style.display = 'none'
+      link.setAttribute('download', `database-${Date.now()}.db`)
+      link.href = url
+      index.appendChild(link)
+      link.click()
+      index.removeChild(link)
+    },
+    async changed (ev) {
+      try {
+        const file = ev.target.files[0]
+        await this.$store.dispatch('importDatabase', file)
+      } catch (error) {
+        console.warn(error)
+      }
     }
   },
   async created () {
@@ -99,6 +133,10 @@ export default {
   padding: 5px 0px;
   text-align: center;
   border-top: 2px solid #d6d6d6;
+}
+
+.row {
+  flex-direction: row;
 }
 
 .no-border {

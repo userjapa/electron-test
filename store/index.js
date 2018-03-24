@@ -2,14 +2,14 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-import state from './state'
-import mutations from './mutations'
-import actions from './actions'
+import game from './game'
+import database from './database'
 
 export default () => {
   return new Vuex.Store({
-    state,
-    mutations,
-    actions
+    modules: {
+      g: game,
+      d: database
+    }
   })
 }

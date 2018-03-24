@@ -42,7 +42,7 @@
               <b>Nenhum Resultado Registrado</b>
             </div>
             <div class="info">
-              <button @click="addResult()">Adicionar Resultado</button>
+              <button @click="addResult()" :disabled="game.games.length === 0">Adicionar Resultado</button>
             </div>
           </div>
           <div class="area">
@@ -100,7 +100,7 @@ import { gameBus } from '@/components/form-game'
 export default {
   computed: {
     game () {
-      return this.$store.state.game
+      return this.$store.state.g.game
     }
   },
   layout: 'sample',

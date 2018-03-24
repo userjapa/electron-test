@@ -1,4 +1,4 @@
-import { formatDate } from './filters'
+import { formatDate } from './../filters'
 
 export default {
   gotGames (state, games) {
