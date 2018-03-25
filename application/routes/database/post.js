@@ -5,7 +5,7 @@ const NeDB = require('nedb')
 module.exports = async (req, res) => {
   // Initialize Form
   var form = new formidable.IncomingForm();
-  const dir = `${__dirname.split('/routes')[0]}/database/`
+  const dir = `${__dirname.split('routes')[0]}database/`
   // Parsing Form
   form.parse(req, function (err, fields, files) {
     const oldpath = files.database.path

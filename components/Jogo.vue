@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { props, methods, mounted, watch } from './jogo'
+import { props, methods, mounted, watch } from './jogo-loto'
 
 export default {
   name: 'jogo',
@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style>
-@import url('./jogo/style.css');
+@import url('./jogo-loto/style.css');
 </style>
