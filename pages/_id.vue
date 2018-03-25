@@ -234,21 +234,22 @@ export default {
 .button button {
   min-width: 125px;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid white;
+  background-color: rgba(147, 9, 137, 0.85);
+  border: 2px solid #930989;
+  color: white;
+  border-radius: 10px;
   outline: none;
 }
 
 .button button:hover {
-  background-color: white;
-  border-color: black;
+  color: #930989;
+  background-color: #fff;
   cursor: pointer;
 }
 
 .button button:active {
-  color: white;
-  background-color: #d6d6d6;
-  border: 1px solid black;
+  color: black;
+  background-color: rgba(147, 9, 137, 0.85);
 }
 
 .info * {
@@ -257,20 +258,22 @@ export default {
 
 .info button {
   padding: 7px;
-  border-radius: 5px;
-  border: 1px solid white;
+  background-color: rgba(147, 9, 137, 0.85);
+  border: 2px solid #930989;
+  color: white;
+  border-radius: 10px;
   outline: none;
 }
 
 .info button:hover {
-  background-color: white;
-  border-color: black;
+  color: #930989;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .info button:active {
-  color: white;
-  background-color: #d6d6d6;
-  border: 1px solid black;
+  color: black;
+  background-color: rgba(147, 9, 137, 0.85);
 }
 
 .small {
@@ -326,23 +329,23 @@ export default {
 
 .action button {
   max-width: 100% !important;
-  border: 0;
   padding: 5px;
   margin: 0 7px;
-  border: 1px solid #d6d6d6;
+  background-color: rgba(147, 9, 137, 0.85);
+  border: 2px solid #930989;
+  color: white;
   outline: none;
 }
 
 .action button:hover {
-  background-color: white;
-  border-color: black;
+  color: #930989;
+  background-color: #fff;
   cursor: pointer;
 }
 
 .action button:active {
-  color: white;
-  background-color: #d6d6d6;
-  border: 1px solid black;
+  color: black;
+  background-color: rgba(147, 9, 137, 0.85);
 }
 
 .right {

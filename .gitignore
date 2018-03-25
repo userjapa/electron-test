@@ -15,3 +15,6 @@ dist
 
 # Electron-packager
 electronuxt-*
+
+# Database
+*.db

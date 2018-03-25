@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  border: 3px solid #d6d6d6;
+  border: 2px solid #930989;
   margin: 15px;
   padding: 10px;
   align-items: flex-start;
@@ -17,13 +17,15 @@
   width: 30px;
   width: 30px;
   flex-grow: 1;
-  border: 3px solid #d6d6d6;
+  border: 2px solid #930989;
   padding: 15px;
   margin: 10px 15px;
   border-radius: 15px;
   cursor: pointer;
+  color: #930989 !important;
 }
 
 .option:hover {
-  background: #d6d6d6;
+  color: #fff !important;
+  background-color: rgba(147, 9, 137, 0.85);
 }

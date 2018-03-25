@@ -21,16 +21,17 @@
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
-  border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
+  border: 2px solid #930989;
+  border-radius: 10px;
 }
 
 .modal-header h3 {
   margin-top: 0;
-  color: black;
+  color: #930989;
   margin-bottom: 5px;
 }
 
@@ -44,18 +45,20 @@
   margin: 0 15px;
   border-radius: 10px;
   outline: none;
+  background-color: rgba(147, 9, 137, 0.85);
+  border: 2px solid #930989;
+  color: white;
 }
 
 .modal-default-button:hover {
-  color: #000;
+  color: #930989;
   background-color: #fff;
-  border: 1px solid black;
+  cursor: pointer;
 }
 
 .modal-default-button:active {
-  color: white;
-  background-color: #d6d6d6;
-  border: 1px solid black;
+  color: black;
+  background-color: rgba(147, 9, 137, 0.85);
 }
 
 .modal-enter {

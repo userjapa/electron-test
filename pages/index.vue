@@ -178,21 +178,22 @@ table tr th, td {
 
 .button-add button {
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid white;
+  border-radius: 10px;
   outline: none;
+  background-color: rgba(147, 9, 137, 0.85);
+  border: 2px solid #930989;
+  color: white;
 }
 
 .button-add button:hover {
-  background-color: white;
-  border-color: black;
+  color: #930989;
+  background-color: #fff;
   cursor: pointer;
 }
 
 .button-add button:active {
-  color: white;
-  background-color: #d6d6d6;
-  border: 1px solid black;
+  color: black;
+  background-color: rgba(147, 9, 137, 0.85);
 }
 
 .icon-trash {
