@@ -80,7 +80,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(g, index) in game.games" :style="{'background-color': g.score >= 11?'#d6d6d6':''}">
+                    <tr v-for="(g, index) in game.checked?game.games.filter(x => x.score >= 11):game.games" :style="{'background-color': g.score >= 11?'#d6d6d6':''}">
                       <td class="id">{{g.id}}</td>
                       <td @click="openGame(g.numbers)">{{game.checked?`${g.score} Acertos`:'Não Verificado'}}</td>
                       <td @click="openGame(g.numbers)">
