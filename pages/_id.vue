@@ -2,7 +2,7 @@
   <div>
     <div class="screen">
       <div class="area no-border">
-        <h2>Sorteio</h2>
+        <h2>Jogos</h2>
       </div>
       <div class="area">
         <div class="screen">

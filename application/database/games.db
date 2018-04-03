@@ -2,11 +2,37 @@
 {"games":[],"result":[],"date":1521938344566,"hits":0,"checked":false,"_id":"NhWldqJ56W4Wy0qE"}
 {"games":[{"numbers":[1,13,25,5,21,17,12,7,8,9,14,19,18,3,23],"score":13,"id":1}],"result":[13,7,9,17,19,3,23,21,5,1,25,15,11,8,18],"date":1521834636565,"hits":1,"checked":true,"_id":"U7neesSl8rK51aP3"}
 {"games":[{"numbers":[12,13,18,14,8,19,9,7,17,11,15,3,23,21,5],"score":13,"id":1},{"numbers":[1,6,11,16,21,22,23,24,25,20,15,10,5,4,3],"score":6,"id":2}],"result":[13,8,7,12,17,18,19,14,9,1,25,23,3,11,15],"date":1521824019233,"hits":1,"checked":true,"_id":"UPHImmm78uUp9o4M"}
-{"games":[{"numbers":[1,6,16,11,21,22,23,24,25,19,13,7,9,5,17],"score":12,"id":1},{"numbers":[1,2,3,4,5,10,15,25,20,9,13,17,19,21,7],"score":12,"id":2},{"numbers":[1,7,19,13,25,5,9,17,21,12,14,8,18,3,23],"score":11,"id":3}],"result":[13,7,17,19,9,3,11,23,15,1,5,25,21,2,24],"date":1521595646571,"hits":3,"checked":true,"_id":"XBPJke6wmZeFLbvc"}
-{"games":[{"numbers":[13,9,7,17,19,3,23,25,15,5,1,21,11,18,8],"score":10,"id":1}],"result":[8,13,7,19,14,18,23,9,24,25,20,15,10,5,4],"date":1521836843010,"hits":0,"checked":true,"_id":"978o73yz6Bkguz49"}
-{"games":[],"result":[],"date":1521938344566,"hits":0,"checked":false,"_id":"NhWldqJ56W4Wy0qE"}
-{"games":[{"numbers":[1,13,25,5,21,17,12,7,8,9,14,19,18,3,23],"score":13,"id":1}],"result":[13,7,9,17,19,3,23,21,5,1,25,15,11,8,18],"date":1521834636565,"hits":1,"checked":true,"_id":"U7neesSl8rK51aP3"}
-{"games":[{"numbers":[12,13,18,14,8,19,9,7,17,11,15,3,23,21,5],"score":13,"id":1},{"numbers":[1,6,11,16,21,22,23,24,25,20,15,10,5,4,3],"score":6,"id":2}],"result":[13,8,7,12,17,18,19,14,9,1,25,23,3,11,15],"date":1521824019233,"hits":1,"checked":true,"_id":"UPHImmm78uUp9o4M"}
 {"games":[{"numbers":[7,12,13,14,19,18,23,24,9,8,3,2,16,17,11],"score":13,"id":1}],"result":[13,8,14,12,18,7,17,19,9,3,2,22,16,21,23],"date":1522007952642,"hits":1,"checked":true,"_id":"Wt17kTtV12XTWYK9"}
 {"games":[{"numbers":[1,6,16,11,21,22,23,24,25,19,13,7,9,5,17],"score":12,"id":1},{"numbers":[1,2,3,4,5,10,15,25,20,9,13,17,19,21,7],"score":12,"id":2},{"numbers":[1,7,19,13,25,5,9,17,21,12,14,8,18,3,23],"score":11,"id":3}],"result":[13,7,17,19,9,3,11,23,15,1,5,25,21,2,24],"date":1521595646571,"hits":3,"checked":true,"_id":"XBPJke6wmZeFLbvc"}
 {"games":[{"numbers":[12,8,14,18,17,22,24,19,4,2,6,10,21,25,3],"score":0,"id":1}],"result":[],"date":1522006652472,"hits":0,"checked":false,"_id":"fgIthgKvrfMFNIIe"}
+{"$$deleted":true,"_id":"Wt17kTtV12XTWYK9"}
+{"$$deleted":true,"_id":"fgIthgKvrfMFNIIe"}
+{"$$deleted":true,"_id":"NhWldqJ56W4Wy0qE"}
+{"$$deleted":true,"_id":"978o73yz6Bkguz49"}
+{"$$deleted":true,"_id":"U7neesSl8rK51aP3"}
+{"$$deleted":true,"_id":"UPHImmm78uUp9o4M"}
+{"$$deleted":true,"_id":"XBPJke6wmZeFLbvc"}
+{"games":[],"result":[],"date":1522713495650,"hits":0,"checked":false,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[{"numbers":[1,7,12,13,18,19,14,15,10,9,4,17,21,23,25],"score":0,"id":1}],"result":[],"date":1522713495650,"hits":0,"checked":false,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[{"numbers":[1,7,12,13,18,19,14,15,10,9,4,17,21,23,25],"score":0,"id":1},{"numbers":[1,2,3,4,5,10,15,20,25,24,23,22,21,16,11],"score":0,"id":2}],"result":[],"date":1522713495650,"hits":0,"checked":false,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[{"numbers":[1,7,12,13,18,19,14,15,10,9,4,17,21,23,25],"score":0,"id":1},{"numbers":[1,2,3,4,5,10,15,20,25,24,23,22,21,16,11],"score":0,"id":2},{"numbers":[1,6,11,16,21,22,23,24,25,20,15,10,5,4,3],"score":0,"id":3}],"result":[],"date":1522713495650,"hits":0,"checked":false,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[{"numbers":[1,7,12,13,18,19,14,15,10,9,4,17,21,23,25],"score":0,"id":1},{"numbers":[1,2,3,4,5,10,15,20,25,24,23,22,21,16,11],"score":0,"id":2},{"numbers":[1,6,11,16,21,22,23,24,25,20,15,10,5,4,3],"score":0,"id":3}],"result":[8,13,12,17,18,19,14,15,23,7,6,11,16,9,10],"date":1522713495650,"hits":0,"checked":false,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[{"numbers":[1,7,12,13,18,19,14,15,10,9,4,17,21,23,25],"score":11,"id":1},{"numbers":[1,2,3,4,5,10,15,20,25,24,23,22,21,16,11],"score":5,"id":2},{"numbers":[1,6,11,16,21,22,23,24,25,20,15,10,5,4,3],"score":6,"id":3}],"result":[8,13,12,17,18,19,14,15,23,7,6,11,16,9,10],"date":1522713495650,"hits":1,"checked":true,"name":"oi 1223","_id":"15SAO6x4pdrUyBSu"}
+{"games":[],"result":[],"date":1522713576904,"hits":0,"checked":false,"name":"oi 234","_id":"2LIXsELw7lBep8pN"}
+{"games":[{"numbers":[1,6,12,13,14,18,22,7,8,9,10,15,20,24,23],"score":0,"id":1}],"result":[],"date":1522713576904,"hits":0,"checked":false,"name":"oi 234","_id":"2LIXsELw7lBep8pN"}
+{"games":[{"numbers":[1,6,12,13,14,18,22,7,8,9,10,15,20,24,23],"score":0,"id":1}],"result":[8,13,12,17,18,23,24,25,20,19,14,7,6,11,16],"date":1522713576904,"hits":0,"checked":false,"name":"oi 234","_id":"2LIXsELw7lBep8pN"}
+{"games":[{"numbers":[1,6,12,13,14,18,22,7,8,9,10,15,20,24,23],"score":10,"id":1}],"result":[8,13,12,17,18,23,24,25,20,19,14,7,6,11,16],"date":1522713576904,"hits":0,"checked":true,"name":"oi 234","_id":"2LIXsELw7lBep8pN"}
+{"$$deleted":true,"_id":"2LIXsELw7lBep8pN"}
+{"$$deleted":true,"_id":"15SAO6x4pdrUyBSu"}
+{"games":[],"result":[],"date":1522713760452,"hits":0,"checked":false,"name":"asdasd","_id":"q5gKVwVvl8Kc8oyw"}
+{"games":[{"numbers":[6,7,8,13,12,17,18,19,24,23,22,21,16,11,14],"score":0,"id":1}],"result":[],"date":1522713760452,"hits":0,"checked":false,"name":"asdasd","_id":"q5gKVwVvl8Kc8oyw"}
+{"games":[{"numbers":[6,7,8,13,12,17,18,19,24,23,22,21,16,11,14],"score":0,"id":1}],"result":[13,7,8,9,14,18,17,22,23,24,25,20,10,15,5],"date":1522713760452,"hits":0,"checked":false,"name":"asdasd","_id":"q5gKVwVvl8Kc8oyw"}
+{"games":[{"numbers":[6,7,8,13,12,17,18,19,24,23,22,21,16,11,14],"score":9,"id":1}],"result":[13,7,8,9,14,18,17,22,23,24,25,20,10,15,5],"date":1522713760452,"hits":0,"checked":true,"name":"asdasd","_id":"q5gKVwVvl8Kc8oyw"}
+{"$$deleted":true,"_id":"q5gKVwVvl8Kc8oyw"}
+{"games":[{"numbers":[6,7,8,13,12,17,18,19,24,23,22,21,16,11,14],"score":9,"id":1}],"result":[13,7,8,9,14,18,17,22,23,24,25,20,10,15,5],"date":1522713760452,"hits":0,"checked":true,"name":"asdasd","_id":"q5gKVwVvl8Kc8oyw"}
+{"$$deleted":true,"_id":"q5gKVwVvl8Kc8oyw"}
+{"games":[],"result":[],"date":1522714110494,"hits":0,"checked":false,"name":"teste 2","_id":"AHFKDQvql4BjyAJo"}
+{"games":[{"numbers":[7,12,13,19,14,15,10,4,3,2,6,16,18,22,25],"score":0,"id":1}],"result":[],"date":1522714110494,"hits":0,"checked":false,"name":"teste 2","_id":"AHFKDQvql4BjyAJo"}
+{"games":[{"numbers":[7,12,13,19,14,15,10,4,3,2,6,16,18,22,25],"score":0,"id":1}],"result":[7,13,9,18,23,3,11,15,22,24,5,1,8,25,21],"date":1522714110494,"hits":0,"checked":false,"name":"teste 2","_id":"AHFKDQvql4BjyAJo"}
+{"games":[{"numbers":[7,12,13,19,14,15,10,4,3,2,6,16,18,22,25],"score":7,"id":1}],"result":[7,13,9,18,23,3,11,15,22,24,5,1,8,25,21],"date":1522714110494,"hits":0,"checked":true,"name":"teste 2","_id":"AHFKDQvql4BjyAJo"}
+{"games":[],"result":[],"date":1522714193955,"hits":0,"checked":false,"name":"teste 2","_id":"slPShs0J1LYA9hNg"}

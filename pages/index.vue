@@ -2,14 +2,15 @@
   <div ref="index-page">
     <div class="view">
       <div class="section no-border">
-        <h2>Sorteios</h2>
+        <h2>Arquivos</h2>
       </div>
       <div class="section">
         <div class="view">
           <div class="section">
             <div class="view row">
               <div class="button-add">
-                <button type="button" name="add_game" @click="createGame()">Adicionar Sorteio</button>
+                <button type="button" name="add_game" @click="createGame(name)" :disabled="name === ''">Adicionar Arquivo</button>
+                <input type="text" placeholder="Informe o Nome do Arquivo" v-model="name">
               </div>
               <div class="button-add">
                 <button type="button" name="import_data" @click="importDatabase()">Importar Dados Sorteio</button>
@@ -25,14 +26,16 @@
               <thead>
                 <tr>
                   <th>Nº de Jogos</th>
+                  <th>Nome</th>
                   <th>Data de Cadastro</th>
                   <th>Resultado</th>
                   <th>Excluir</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="game in games">
+                <tr v-for="game in games" class="click">
                   <td @click="goTo(game['_id'])">{{ game.games.length }}</td>
+                  <td @click="goTo(game['_id'])">{{ game.name }}</td>
                   <td @click="goTo(game['_id'])">{{ game.date }}</td>
                   <td @click="goTo(game['_id'])">{{ !game.checked?'Não Conferido':`${game.hits} acertos` }}</td>
                   <td class="icon-trash"><button @click="deleteGame(game['_id'])"><img src="~/assets/images/trash-can.png" alt="Deletar Sorteio"></button></td>
@@ -68,13 +71,15 @@ export default {
   layout: 'sample',
   data () {
     return {
-      hasData: true
+      hasData: true,
+      name: ''
     }
   },
   methods: {
-    async createGame () {
+    async createGame (name) {
       this.hasData = true
-      await this.$store.dispatch('createNewGame')
+      // const name =
+      await this.$store.dispatch('createNewGame', name)
     },
     async deleteGame (id) {
       if (this.games.length === 1) this.hasData = false
@@ -164,6 +169,8 @@ table tr th, td {
   max-width: 25%;
 }
 
+
+
 .exception {
   flex-grow: 1;
   max-width: 100%;
@@ -214,4 +221,17 @@ table tr th, td {
   outline: none;
   cursor: pointer;
 }
+
+.button-add input {
+  margin-left: 7px;
+  padding: 10px;
+  border:1px solid #930989;
+  border-radius: 10px;
+  outline: none;
+}
+
+.click:hover {
+  background-color: #d6d6d6;
+}
+
 </style>

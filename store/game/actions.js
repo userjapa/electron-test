@@ -10,14 +10,15 @@ export default {
       console.warn(error)
     }
   },
-  async createNewGame ({ commit }) {
+  async createNewGame ({ commit }, name) {
     try {
       const game = {
         games: [],
         result: [],
         date: Date.now(),
         hits: 0,
-        checked: false
+        checked: false,
+        name: name
       }
       const { data } = await axios.post('http://localhost:4210/game/', game)
       if (data.error) throw new Error('Failed to Create New Game!', data.error)
