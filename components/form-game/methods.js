@@ -22,6 +22,7 @@ export default {
       await this.$store.dispatch('change', game)
       gameBus.$emit('close')
       this.$data.numbers = []
+      gameBus.$emit('verify-game', game)
     } else {
       alert('Devem ser Selecionados 15 números!')
       this.$data.numbers = this.$data.numbers

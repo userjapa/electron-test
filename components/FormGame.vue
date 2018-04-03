@@ -19,10 +19,10 @@
             <button class="modal-default-button" @click="close()">
               Fechar
             </button>
-            <button v-if="(edit === null) && !result && !jogo.checked" class="modal-default-button" @click="addGame(jogo)">
+            <button v-if="(edit === null) && !result" class="modal-default-button" @click="addGame(jogo)">
               Adicionar Jogo
             </button>
-            <button v-if="(edit !== null) && !result && !jogo.checked" class="modal-default-button" @click="editGame(jogo)">
+            <button v-if="(edit !== null) && !result" class="modal-default-button" @click="editGame(jogo)">
               Editar
             </button>
             <button v-if="result && (edit === null) && !jogo.checked" class="modal-default-button" @click="addResult(jogo)">

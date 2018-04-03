@@ -8,9 +8,13 @@
         <div class="view">
           <div class="section">
             <div class="view row">
-              <div class="button-add">
+              <div class="button-add" v-if="!edit">
                 <button type="button" name="add_game" @click="createGame(name)" :disabled="name === ''">Adicionar Arquivo</button>
                 <input type="text" placeholder="Informe o Nome do Arquivo" v-model="name">
+              </div>
+              <div class="button-add" v-if="edit">
+                <button type="button" name="edit_game" @click="editGame(toEdit)" :disabled="name === ''">Editar Arquivo</button>
+                <input type="text" v-model="name">
               </div>
               <div class="button-add">
                 <button type="button" name="import_data" @click="importDatabase()">Importar Dados Sorteio</button>
@@ -29,6 +33,7 @@
                   <th>Nome</th>
                   <th>Data de Cadastro</th>
                   <th>Resultado</th>
+                  <th>Editar</th>
                   <th>Excluir</th>
                 </tr>
               </thead>
@@ -38,6 +43,7 @@
                   <td @click="goTo(game['_id'])">{{ game.name }}</td>
                   <td @click="goTo(game['_id'])">{{ game.date }}</td>
                   <td @click="goTo(game['_id'])">{{ !game.checked?'Não Conferido':`${game.hits} acertos` }}</td>
+                  <td><button class="btn-edit" @click="editName(game)">Editar</button></td>
                   <td class="icon-trash"><button @click="deleteGame(game['_id'])"><img src="~/assets/images/trash-can.png" alt="Deletar Sorteio"></button></td>
                 </tr>
                 <!-- <tr v-if="!hasData">
@@ -72,7 +78,9 @@ export default {
   data () {
     return {
       hasData: true,
-      name: ''
+      name: '',
+      edit: false,
+      toEdit: null
     }
   },
   methods: {
@@ -112,6 +120,18 @@ export default {
       } catch (error) {
         console.warn(error)
       }
+    },
+    editName (game) {
+      this.edit = true
+      this.toEdit = game
+      this.name = game.name
+    },
+    async editGame (game) {
+      game.name = this.name
+      await this.$store.dispatch('change', game)
+      this.edit = false
+      this.toEdit = null
+      this.name = ''
     }
   },
   async created () {
@@ -234,4 +254,12 @@ table tr th, td {
   background-color: #d6d6d6;
 }
 
+.btn-edit {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-edit:hover {
+  background-color: white;
+}
 </style>

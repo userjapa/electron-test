@@ -14,7 +14,7 @@
                 </nuxt-link>
               </div>
               <div class="button">
-                <button type="button" name="add_game" @click="openModal()" :disabled="game.checked">Adicionar Jogo</button>
+                <button type="button" name="add_game" @click="openModal()">Adicionar Jogo</button>
               </div>
             </div>
           </div>
@@ -30,10 +30,7 @@
             </div>
             <div class="info dad">
               <div class="button small">
-                <button class="right" @click="editResult(game.result)">Editar Resultado</button>
-              </div>
-              <div class="button small">
-                <button class="left" @click="verify(game)">Verificar Jogos</button>
+                <button @click="editResult(game.result)">Editar Resultado</button>
               </div>
             </div>
           </div>
@@ -71,10 +68,10 @@
                       </td>
                       <td>
                         <div class="button action">
-                          <button class="right" @click="editGame(index, g.numbers)" :disabled="game.checked">Editar</button>
+                          <button class="right" @click="editGame(index, g.numbers)">Editar</button>
                         </div>
                         <div class="button action">
-                          <button class="left" @click="remove(index)" :disabled="game.checked">Remover</button>
+                          <button class="left" @click="remove(index)">Remover</button>
                         </div>
                       </td>
                     </tr>
@@ -196,6 +193,10 @@ export default {
       this.$data.showModal = false
       if (this.$data.edit !== null) this.$data.edit = null
       if (this.$data.result) this.$data.result = false
+    })
+
+    gameBus.$on('verify-game', game => {
+      this.verify(game)
     })
 
     this.getScores()
@@ -346,14 +347,6 @@ export default {
 .action button:active {
   color: black;
   background-color: rgba(147, 9, 137, 0.85);
-}
-
-.right {
-  float: right;
-}
-
-.left {
-  float: left;
 }
 
 .space {
