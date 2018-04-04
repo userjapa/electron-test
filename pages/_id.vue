@@ -30,7 +30,10 @@
             </div>
             <div class="info dad">
               <div class="button small">
-                <button @click="editResult(game.result)">Editar Resultado</button>
+                <button class="right" @click="editResult(game.result)">Editar Resultado</button>
+              </div>
+              <div class="button small">
+                <button class="left" @click="verify(game)">Verificar</button>
               </div>
             </div>
           </div>
@@ -347,6 +350,14 @@ export default {
 .action button:active {
   color: black;
   background-color: rgba(147, 9, 137, 0.85);
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
 }
 
 .space {
