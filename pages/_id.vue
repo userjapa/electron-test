@@ -189,20 +189,24 @@ export default {
         copy[x.score]++
       }
       this.corrects = copy
+    },
+    verifyGameHandler (game) {
+      this.verify(game)
     }
   },
-  mounted () {
+  created () {
     gameBus.$on('close', () => {
       this.$data.showModal = false
       if (this.$data.edit !== null) this.$data.edit = null
       if (this.$data.result) this.$data.result = false
     })
 
-    gameBus.$on('verify-game', game => {
-      this.verify(game)
-    })
+    gameBus.$on('verify-game', this.verifyGameHandler)
 
     this.getScores()
+  },
+  beforeDestroy () {
+    gameBus.$off('verify-game', this.verifyGameHandler)
   }
 }
 </script>
